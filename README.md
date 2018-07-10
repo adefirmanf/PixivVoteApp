@@ -14,7 +14,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars0.githubusercontent.com/u/23324722?v=4" width="100px;"/><br /><sub><b>Ade Firman Fauzi</b></sub>](https://www.linkedin.com/in/adefirmanf/)<br />[💻](https://github.com/adefirmanf/PixivChain/commits?author=adefirmanf "Code") |
+| [<img src="https://avatars0.githubusercontent.com/u/23324722?v=4" width="100px;"/><br /><sub><b>Ade Firman Fauzi</b></sub>](https://www.linkedin.com/in/adefirmanf/)<br />[💻](https://github.com/adefirmanf/PixivChain/commits?author=adefirmanf "Code") [📖](https://github.com/adefirmanf/PixivChain/commits?author=adefirmanf "Documentation") |
 | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
