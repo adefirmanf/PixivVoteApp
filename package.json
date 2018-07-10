@@ -1,0 +1,28 @@
+{
+  "name": "pixivvote",
+  "version": "1.0.0",
+  "description": "![alt text](https://image.ibb.co/dsVERo/logo_test.png \"Pixiv X Blockchain\")",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "all-contributors-cli": "^5.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adefirmanf/PixivVoteApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adefirmanf/PixivVoteApp/issues"
+  },
+  "homepage": "https://github.com/adefirmanf/PixivVoteApp#readme"
+}
