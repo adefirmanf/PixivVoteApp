@@ -1,5 +1,11 @@
 # PixivChain
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](#pullrequest)
+[![npm version](https://img.shields.io/npm/v/truffle.svg?style=flat-square)](https://www.npmjs.com/package/truffle)
+
+
 ![alt text](https://image.ibb.co/dsVERo/logo_test.png "Pixiv X Blockchain")
+
 
 We trying to build Pixiv ranking application based on how much member bookmarked (Which the concept has been implemented to original website http://pixiv.net) but in this case we using Blockchain Technology.
 
@@ -7,7 +13,6 @@ We trying to build Pixiv ranking application based on how much member bookmarked
 ## Running 
 ## Bug Report
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
