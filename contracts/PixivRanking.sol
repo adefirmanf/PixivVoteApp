@@ -5,10 +5,7 @@ contract PixivRanking{
 
     uint public Idcount;
     
-    constructor()public{
-        newIllustrator("https://www.pixiv.net/member.php?id=11075375", "https://www.pixiv.net/member_illust.php?mode=medium&illust_id=69375348");
-        newIllustrator("https://www.pixiv.net/member.php?id=1313098", "https://www.pixiv.net/member_illust.php?mode=medium&illust_id=60017214");
-    }
+    constructor()public{}
 
     struct Member{ //Also known as Voters
 
@@ -23,6 +20,11 @@ contract PixivRanking{
     
     mapping(uint => Illustrator) public illustrator;
     
+    function Init() public{
+        newIllustrator("https://www.pixiv.net/member.php?id=11075375", "https://www.pixiv.net/member_illust.php?mode=medium&illust_id=69375348");
+        newIllustrator("https://www.pixiv.net/member.php?id=1313098", "https://www.pixiv.net/member_illust.php?mode=medium&illust_id=60017214");
+    }
+
     function newIllustrator(string _MemberURL, string _ImageURL) public {
         Idcount++;
         illustrator[Idcount] = Illustrator(Idcount, _MemberURL, _ImageURL, 0);    
