@@ -1,50 +1,72 @@
+/* solium-disable */
 pragma solidity ^0.4.23;
 
+contract Member{
 
-contract PixivRanking{
-
-    uint public Idcount;
-    
-    constructor()public{}
+    uint public Votecount;
 
     struct Member{ //Also known as Voters
-
+        bool Boomarked;
+        address AddressMember;
+        uint VoteCount;
     }
 
+}
+
+contract PixivRanking{
     struct Illustrator{
-        uint Idcount;
-        string MemberURL;
-        string ImageURL;
-        uint BookmarksCount;
-    }
-    
-    mapping(uint => Illustrator) public illustrator;
-    
-    function Init() public{
-        newIllustrator("https://www.pixiv.net/member.php?id=11075375", "https://www.pixiv.net/member_illust.php?mode=medium&illust_id=69375348");
-        newIllustrator("https://www.pixiv.net/member.php?id=1313098", "https://www.pixiv.net/member_illust.php?mode=medium&illust_id=60017214");
-    }
-
-    function newIllustrator(string _MemberURL, string _ImageURL) public {
-        Idcount++;
-        illustrator[Idcount] = Illustrator(Idcount, _MemberURL, _ImageURL, 0);    
-    }
-
-    function addBookmarks(uint _Id) public {
-        require(illustrator[_Id].Idcount > 0, "Illustrator ID not exist!"); /*
-        Error Message can't shown on log. Please read the tutorial and the issue 
-        [Tutorial]
-        https://medium.com/blockchannel/the-use-of-revert-assert-and-require-in-solidity-and-the-new-revert-opcode-in-the-evm-1a3a7990e06e
-
-        [Issue]
-        https://github.com/ethereum/solidity/issues/1686#issuecomment-328181514
-
-        But, for default transaction will revert
-        */
-
-        illustrator[_Id].BookmarksCount += 1;
-    }
-
-    function Ranking() private {}
+            uint IllustratorID;
+            string name;
+            uint256[] images;
+        }
+        
+        struct Image{
+            uint256 ImageID;
+            uint32 Bookmarkscount;
+            string imageName;
+        }   
+        
+        mapping (address => Illustrator) illustrator;
+        mapping (uint256 => Image) images;
+        
+        address[] public IllustratorAccs;
+        
+        
+        function AddIllustrator (address _address, uint _IllustratorID, string _name) public {
+            var illust = illustrator[_address];
+            illust.IllustratorID = _IllustratorID;
+            illust.name = _name;
+            IllustratorAccs.push(_address) -1;
+        }
+        
+        function GetArray() public view returns(address[]){
+            return IllustratorAccs;
+        }
+        
+        function AddImage (address _IllustratorImage, uint256 _imageID, string _nameImage) public {
+            var image = images[_imageID];
+            image.ImageID = _imageID;
+            image.imageName = _nameImage;
+            illustrator[_IllustratorImage].images.push(_imageID) -1;
+        }
+        
+        function GetImage(address _IllustratorImage) public returns (uint[]){
+            return illustrator[_IllustratorImage].images;
+        }
+        
+        function IndividualImage(address _IllustratorImage) public returns (bool){
+            
+            return false;
+        }
+        
+        function AddBookmark(address _IllustratorImage, uint256 _imageID) public {
+            var IllustImagelength = illustrator[_IllustratorImage].images.length;
+            for(uint i = 0; i < IllustImagelength; i++){
+                    if(illustrator[_IllustratorImage].images[i] == _imageID){
+                    throw;  
+                    } 
+            }
+            images[_imageID].Bookmarkscount = 1;    
+        }
 
 }
