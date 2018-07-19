@@ -1,7 +1,7 @@
 <template>
     <div id="body">
         HELLO FROM VUE.JS</br>
-        <small>Everything was done. Creator and founder of {{name}} </small>
+        <small>Everything was done. Your Ethereum address is {{data}} </small>
     </div>
 </template>
 <script>
@@ -9,12 +9,16 @@ import Web3 from 'web3'
 export default {
     data(){
         return {
-            'name' : "Ade Firman F"
+            'name' : "Ade Firman F",
+            'data' : ''
         }
     },
     mounted(){
-        let web3 = new Web3()
-        console.log(web3)
+        let self = this;
+        let web3 = new Web3('http://localhost:7545')
+        web3.eth.getCoinbase().then((address)=>{
+            self.data = address
+        })
     }
 }
 </script>
