@@ -2,7 +2,8 @@ const PixivApp = artifacts.require('PixivRanking')
 
 contract("PixivApp Vote", (account)=>{
     let app;
-    it("Should initialization of Illustration", ()=>{
+    it("Should create of Illustrator account", ()=>{
+        const ID = 1;
         return PixivApp.deployed()
                 .then((instance)=>{
                     app = instance

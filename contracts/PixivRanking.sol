@@ -15,6 +15,9 @@ contract Member{
 
 contract PixivRanking{
     struct Illustrator{
+        /*
+        Futher, it can contain of E-mail, token, and some address
+        */
             uint IllustratorID;
             string name;
             uint256[] images;
