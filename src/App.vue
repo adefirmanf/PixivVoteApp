@@ -1,7 +1,6 @@
 <template>
     <div id="body">
-        HELLO FROM VUE.JS</br>
-        <small>Everything was done. Your Ethereum address is {{data}} </small>
+        <router-view></router-view>
     </div>
 </template>
 <script>
@@ -9,7 +8,6 @@ import Web3 from 'web3'
 export default {
     data(){
         return {
-            'name' : "Ade Firman F",
             'data' : ''
         }
     },
