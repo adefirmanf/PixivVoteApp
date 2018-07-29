@@ -26,8 +26,8 @@
         </div>
             <div class="credit">
                 <div class="link">
-                居酒屋街 </br> <small>
-                Hourglass/さざなみ</small>
+                黄昏 </br> <small>
+                KNYT</small>
                 </div>
             </div>
     </div>
@@ -35,6 +35,8 @@
 <script>
 import Web3 from 'web3'
 import pixivAPI from 'pixiv-app-api'
+import axios from 'axios'
+
 export default {
     data(){
         return {
@@ -44,16 +46,13 @@ export default {
     },
     methods : {
         LoginPixiv : function(){
-            
+            axios.get('http://localhost:3000').then((response)=>{
+                console.log(response)
+            })
         }
     },
     created : function() {
-        const pixiv = new pixivAPI()
-        pixiv.searchIllust('艦これ10000users入り').then((response)=>{
-            console.log(response)
-        }).catch((err)=>{
-            console.log(err)
-        })
+      
     }
 }
 </script>
