@@ -59,6 +59,7 @@
     "dev": "webpack-dev-server --inline --progress --config webpack/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node webpack/build.js",
+    "production" : "PORT=8000 NODE_ENV=production node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
