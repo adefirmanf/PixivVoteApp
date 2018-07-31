@@ -1,60 +1,67 @@
 <template>
-    <div class="background">
-        <div id="body">
-            <div class="centered">
-                <el-card :body-style="{ padding: '20px' }" shadow="never">
-                        <div class="logo">
-                            <img src="./pixiv.svg" style="width : 60%"/>
-                            <img src="./blockchain.svg" style="width : 30%"/>
-                            <div class="logo-description">
-                                <small>Spread your illustrations and earn a money</small>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="button-group">
-                            <el-button type="primary" class="button-custom" size="small" @click="LoginPixiv">Login with pixiv account</el-button></br>
-                            <el-button type="info" class="button-custom" size="small">No, Just explore</el-button>
-                        </div>
-                        <div class="metamask bottom clearfix">
-                            <b>Ethereum account : <br></b>                                      
-                            <small>
-                            9x9z00z0x999120102919zkxjckzxjc0
-                            </small>
-                        </div>
-                </el-card>
+  <div class="background">
+    <div id="body">
+      <div class="centered">
+        <el-card
+          :body-style="{ padding: '20px' }"
+          shadow="never">
+          <div class="logo">
+            <img
+              src="./pixiv.svg"
+              style="width : 60%">
+            <img
+              src="./blockchain.svg"
+              style="width : 30%">
+            <div class="logo-description">
+              <small>Spread your illustrations and earn a money</small>
             </div>
-        </div>
-            <div class="credit">
-                <div class="link">
-                黄昏 </br> <small>
-                KNYT</small>
-                </div>
-            </div>
+          </div>
+          <br>
+          <div class="button-group">
+            <el-button
+              type="primary"
+              class="button-custom"
+              size="small"
+              @click="LoginPixiv">Login with pixiv account
+            </el-button>
+            <el-button
+              type="info"
+              class="button-custom"
+              size="small">No, Just explore
+            </el-button>
+          </div>
+          <div class="metamask bottom clearfix">
+            <b>Ethereum account : <br></b>
+            <small>9x9z00z0x999120102919zkxjckzxjc0</small>
+          </div>
+        </el-card>
+      </div>
     </div>
+    <div class="credit">
+      <div class="link">黄昏
+        <br>
+        <small>KNYT</small>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
-import Web3 from 'web3'
-import pixivAPI from 'pixiv-app-api'
-import axios from 'axios'
+// import Web3 from 'web3'
+import axios from 'axios';
 
 export default {
-    data(){
-        return {
-            'data' : '',
-            'url' : "/@/assets/img/pixiv.svg"
-        }
+  data() {
+    return { };
+  },
+  created: () => { },
+  methods: {
+    LoginPixiv: () => {
+      axios.get('http://localhost:3000').then((response) => {
+        console.log(response);
+      });
     },
-    methods : {
-        LoginPixiv : function(){
-            axios.get('http://localhost:3000').then((response)=>{
-                console.log(response)
-            })
-        }
-    },
-    created : function() {
-      
-    }
-}
+  },
+};
 </script>
 <style>
     body{
