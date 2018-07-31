@@ -11,5 +11,11 @@
         "airbnb-base",
         "plugin:vue/recommended"
     ],
-    "rules": {}
+    "rules": {
+        "import/no-unresolved": "off",
+        "import/extensions": "off"      
+    },
+    "settings": {
+         
+      }
 }
