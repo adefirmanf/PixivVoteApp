@@ -18,6 +18,31 @@
           </div>
           <br>
           <div class="button-group">
+            <div
+              v-show="show"
+              class="form">
+              <el-form
+                ref="form"
+                :model="form"
+                class="form-custom"
+                label-width="50%">
+                <el-input
+                  v-model="form.username"
+                  class="__username"
+                  placeholder="PixivID"/>
+              </el-form>
+              <el-form
+                ref="form"
+                :model="form"
+                class="form-custom"
+                label-width="50%">
+                <el-input
+                  v-model="form.password"
+                  class="__password"
+                  type="password"
+                  placeholder="Password"/>
+              </el-form>
+            </div>
             <el-button
               type="primary"
               class="button-custom"
@@ -25,6 +50,7 @@
               @click="LoginPixiv">Login with pixiv account
             </el-button>
             <el-button
+              v-show="!show"
               type="info"
               class="button-custom"
               size="small">No, Just explore
@@ -32,7 +58,7 @@
           </div>
           <div class="metamask bottom clearfix">
             <b>Ethereum account : <br></b>
-            <small>9x9z00z0x999120102919zkxjckzxjc0</small>
+            <small>{{ message }}</small>
           </div>
         </el-card>
       </div>
@@ -47,18 +73,27 @@
 </template>
 <script>
 // import Web3 from 'web3'
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
   data() {
-    return { };
+    return {
+      message: '9x9c010820ax01kzx021028eas',
+      show: false,
+      form: {
+        username: '',
+        password: '',
+      },
+    };
   },
-  created: () => { },
+  created: () => {
+  },
   methods: {
-    LoginPixiv: () => {
-      axios.get('http://localhost:3000').then((response) => {
-        console.log(response);
-      });
+    LoginPixiv() {
+      this.show = true;
+      // axios.get('http://localhost:3000').then((response) => {
+      //   console.log(response);
+      // });
     },
   },
 };
@@ -88,6 +123,27 @@ export default {
     .button-custom{
         margin-top : 5px;
         width : 70%;
+    }
+    .form-custom{
+        width: 70%;
+        margin-left : 48px;
+        margin-right : auto;
+    }
+    .form-custom > .__username > input.el-input__inner{
+        border-radius: 4px 4px 0px 0px !important;
+    }
+    .form-custom > .__password > input.el-input__inner{
+        border-top : 0px !important;
+        border-radius: 0px 0px 4px 4px !important;
+    }
+    .form-custom > .__password > input.el-input__inner:focus{
+        border-color : #DCDFE5 !important;
+    }
+    .form-custom > .__username > input.el-input__inner:focus, input.el-input__inner:hover{
+        border-color : #DCDFE5 !important;
+    }
+    .el-button+.el-button {
+    margin-left: 0 !important;
     }
     .button-group{
         box-sizing : border-box;
