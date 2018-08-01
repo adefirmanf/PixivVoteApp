@@ -3,6 +3,7 @@
     <div id="body">
       <div class="centered">
         <el-card
+          v-loading="loading"
           :body-style="{ padding: '20px' }"
           shadow="never">
           <div class="logo">
@@ -81,6 +82,7 @@ export default {
     return {
       message: '9x9c010820ax01kzx021028eas',
       show: false,
+      loading: false,
       form: {
         username: '',
         password: '',
