@@ -74,8 +74,9 @@
   </div>
 </template>
 <script>
+/* eslint-disable no-console no-unused-vars */
 // import Web3 from 'web3'
-// import axios from 'axios';
+import axios from 'axios';
 
 export default {
   data() {
@@ -93,10 +94,14 @@ export default {
   },
   methods: {
     LoginPixiv() {
+      if (this.show) {
+        axios.post('http://localhost:3000/api', JSON.stringify(this.form),
+          { headers: { 'Content-type': 'application/json' } })
+          .then((response) => {
+            console.log(response);
+          });
+      }
       this.show = true;
-      // axios.get('http://localhost:3000').then((response) => {
-      //   console.log(response);
-      // });
     },
   },
 };

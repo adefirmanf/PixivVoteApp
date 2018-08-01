@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 
@@ -12,6 +13,7 @@ const corsOptions = {
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
+app.use(bodyParser.json());
 app.use('/api', cors(corsOptions), index);
 if (process.env.NODE_ENV === 'production') {
   console.log('Production is running');
