@@ -18,31 +18,33 @@
           </div>
           <br>
           <div class="button-group">
-            <div
-              v-show="show"
-              class="form">
-              <el-form
-                ref="form"
-                :model="form"
-                class="form-custom"
-                label-width="50%">
-                <el-input
-                  v-model="form.username"
-                  class="__username"
-                  placeholder="PixivID"/>
-              </el-form>
-              <el-form
-                ref="form"
-                :model="form"
-                class="form-custom"
-                label-width="50%">
-                <el-input
-                  v-model="form.password"
-                  class="__password"
-                  type="password"
-                  placeholder="Password"/>
-              </el-form>
-            </div>
+            <transition name="fade">
+              <div
+                v-show="show"
+                class="form">
+                <el-form
+                  ref="form"
+                  :model="form"
+                  class="form-custom"
+                  label-width="50%">
+                  <el-input
+                    v-model="form.username"
+                    class="__username"
+                    placeholder="PixivID"/>
+                </el-form>
+                <el-form
+                  ref="form"
+                  :model="form"
+                  class="form-custom"
+                  label-width="50%">
+                  <el-input
+                    v-model="form.password"
+                    class="__password"
+                    type="password"
+                    placeholder="Password"/>
+                </el-form>
+              </div>
+            </transition>
             <el-button
               type="primary"
               class="button-custom"
@@ -50,7 +52,6 @@
               @click="LoginPixiv">Login with pixiv account
             </el-button>
             <el-button
-              v-show="!show"
               type="info"
               class="button-custom"
               size="small">No, Just explore
@@ -114,6 +115,12 @@ export default {
         margin : 20vh auto 0 auto;
         width : 363px;
         text-align : center;
+    }
+    .fade-enter-active, .fade-leave-active {
+      transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+      opacity: 0;
     }
     .logo > .logo-description{
         color : gray;
