@@ -76,7 +76,7 @@
 <script>
 /* eslint-disable no-console no-unused-vars */
 // import Web3 from 'web3'
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
   data() {
@@ -91,15 +91,22 @@ export default {
     };
   },
   created: () => {
+    /* Dynamic background using Pixiv search.
+       With following filter : [ "Scenary", "Horizontal", "1000px ~ 2999px" ]
+    */
   },
   methods: {
     LoginPixiv() {
       if (this.show) {
-        axios.post('http://localhost:3000/api', JSON.stringify(this.form),
-          { headers: { 'Content-type': 'application/json' } })
-          .then((response) => {
-            console.log(response);
-          });
+        this.loading = true;
+        setTimeout(() => {
+          this.loading = false;
+        }, 4000);
+        // axios.post('http://localhost:3000/api/login', JSON.stringify(this.form),
+        //   { headers: { 'Content-type': 'application/json' } })
+        //   .then((response) => {
+        //     console.log(response);
+        //   });
       }
       this.show = true;
     },
