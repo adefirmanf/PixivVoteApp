@@ -1,3 +1,1 @@
-const Server = require('./bin/www');
-
-Server();
+require('./bin/www');
