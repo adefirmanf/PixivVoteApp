@@ -1,5 +1,7 @@
 <template>
-  <div class="background">
+  <div
+    :style="{background : 'url(' + URL + ')'}"
+    class="background">
     <div id="body">
       <div class="centered">
         <el-card
@@ -76,11 +78,12 @@
 <script>
 /* eslint-disable no-console no-unused-vars */
 // import Web3 from 'web3'
-// import axios from 'axios';
+import axios from 'axios';
 
 export default {
   data() {
     return {
+      URL: '/static/img/sample.d3e5f29.jpg',
       message: '9x9c010820ax01kzx021028eas',
       show: false,
       loading: false,
@@ -90,9 +93,14 @@ export default {
       },
     };
   },
-  created: () => {
+  created() {
+    const self = this;
+    axios.get('http://localhost:3000/api').then((response) => {
+      self.URL = response.data.url;
+    });
     /* Dynamic background using Pixiv search.
        With following filter : [ "Scenary", "Horizontal", "1000px ~ 2999px" ]
+       word=風景&order=popular_d&wlt=1000&wgt=2999&hlt=1000&hgt=2999&ratio=0.5
     */
   },
   methods: {
