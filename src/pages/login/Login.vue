@@ -78,7 +78,7 @@
 <script>
 /* eslint-disable no-console no-unused-vars */
 // import Web3 from 'web3'
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
   data() {
@@ -94,10 +94,10 @@ export default {
     };
   },
   created() {
-    const self = this;
-    axios.get('http://localhost:3000/api').then((response) => {
-      self.URL = response.data.url;
-    });
+    // const self = this;
+    // axios.get('http://localhost:3000/api').then((response) => {
+    //   self.URL = response.data.url;
+    // });
     /* Dynamic background using Pixiv search.
        With following filter : [ "Scenary", "Horizontal", "1000px ~ 2999px" ]
        word=風景&order=popular_d&wlt=1000&wgt=2999&hlt=1000&hgt=2999&ratio=0.5
