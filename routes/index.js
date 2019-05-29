@@ -3,8 +3,8 @@ const Pixiv = require('pixiv-app-api');
 const axios = require('axios');
 
 Router.get('/login', () => {
-  const Username = 'hourglass-art';
-  const Password = 'jii537os56';
+  const Username = process.env.USERNAME;
+  const Password = process.env.PASSWORD;
   new Pixiv(Username, Password)
     .searchIllust('艦これ10000users入り')
     .then((response) => {
